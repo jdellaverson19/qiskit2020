@@ -14,8 +14,8 @@ def main():
 	bvObject = BernsteinVazirani()
 
 	# constants
-	QUBIT_RANGE = 5
-	ITERATIONS = 2
+	QUBIT_RANGE = 65
+	ITERATIONS = 10
 
 
 	worked = np.zeros(shape=(QUBIT_RANGE, ITERATIONS))
