@@ -13,12 +13,12 @@ def main():
 	simonObject = Simon()
 
 	# constants
-	QUBIT_RANGE = 5
-	ITERATIONS = 4
+	QUBIT_RANGE = 7
+	ITERATIONS = 2
 
 
-	worked = np.zeros(shape=(QUBIT_RANGE, ITERATIONS))
-	timing = np.zeros(shape=(QUBIT_RANGE, ITERATIONS))
+	worked = np.zeros(shape=(QUBIT_RANGE-1, ITERATIONS))
+	timing = np.zeros(shape=(QUBIT_RANGE-1, ITERATIONS))
 
 	print('Testing out Simon\'s alorithm...')
 
@@ -40,7 +40,8 @@ def main():
 			end = time.perf_counter()
 
 			print("Result = " + str(result) + (": Worked" if result == s else ": Failed"))
-			timing[n-1][j] = (end - start)
+			print("Timing: " + str(end-start))
+			timing[n-2][j] = (end - start)
 
 	qubit_values = []
 	for n in range(2, QUBIT_RANGE+1):
