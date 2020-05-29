@@ -87,6 +87,8 @@ class Simon(object):
 					s_int = nullspace[0].transpose().tolist()[0]
 					s_char = [str(abs(bit)) for bit in s_int]
 					s_string = ''.join(s_char)
+					if s_string.find('2') != -1:
+						continue
 					s = int(s_string, 2)
 					print("Potential s value: " + str(s))
 					return s if f(s) == f(0) else 0
